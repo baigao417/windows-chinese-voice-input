@@ -1,0 +1,98 @@
+{
+  "hotkeys": {
+    "backend": "win32",
+    "toggle": "ctrl+m",
+    "quit": "ctrl+alt+q",
+    "copy_last": "ctrl+alt+m"
+  },
+  "audio": {
+    "sample_rate": 16000,
+    "channels": 1,
+    "device": null
+  },
+  "stt": {
+    "engine": "siliconflow",
+    "model": "TeleAI/TeleSpeechASR",
+    "base_url": "https://api.siliconflow.cn/v1",
+    "api_key_env": "SILICONFLOW_API_KEY",
+    "secrets_file": null,
+    "secrets_provider": "siliconflow",
+    "secrets_key": "api_key",
+    "timeout_seconds": 180,
+    "language": "zh",
+    "fallback": {
+      "enabled": true,
+      "engine": "faster-whisper",
+      "model": "large-v3-turbo",
+      "model_cache_dir": "models",
+      "device": "auto",
+      "compute_type": "auto",
+      "language": "zh",
+      "beam_size": 5,
+      "vad_filter": true
+    }
+  },
+  "llm": {
+    "enabled": true,
+    "provider": "openai-compatible",
+    "base_url": "https://api.siliconflow.cn/v1",
+    "model": "zai-org/GLM-4.5-Air",
+    "fallback_model": "THUDM/GLM-4-9B-0414",
+    "api_key_env": "SILICONFLOW_API_KEY",
+    "secrets_file": null,
+    "secrets_provider": "siliconflow",
+    "secrets_key": "api_key",
+    "temperature": 0.2,
+    "max_tokens": 1024,
+    "timeout_seconds": 60
+  },
+  "paste": {
+    "enabled": true,
+    "method": "clipboard",
+    "focus_guard_enabled": true,
+    "restore_clipboard": true,
+    "paste_delay_seconds": 0.12,
+    "restore_delay_seconds": 0.8,
+    "autohotkey_exe": null,
+    "autohotkey_script": "scripts/paste_text.ahk",
+    "autohotkey_timeout_seconds": 5
+  },
+  "ui": {
+    "overlay": {
+      "enabled": true,
+      "recording_width": 176,
+      "processing_width": 142,
+      "height": 64,
+      "bottom_margin": 72,
+      "opacity": 0.96,
+      "processing_eta_seconds": 12,
+      "processing_show_eta_text": false,
+      "transparent_color": "#ff00ff",
+      "cancelled_width": 260,
+      "processing_show_progress_fill": false
+    }
+  },
+  "default_mode": "default",
+  "modes": {
+    "default": {
+      "name": "统一润色整理",
+      "prompt_path": "prompts/long_typeless_v4.md",
+      "enhance": true
+    }
+  },
+  "dictionary_path": "dictionary.txt",
+  "history": {
+    "last_result_path": "logs/last-result.json",
+    "usage_log_path": "logs/usage.jsonl",
+    "feedback_log_path": "logs/bad-feedback.jsonl",
+    "daemon_status_path": "logs/daemon-status.json",
+    "daemon_lock_path": "logs/daemon.lock.json",
+    "daemon_control_path": "logs/daemon-control.json",
+    "bad_case_dir": "logs/bad-cases"
+  },
+  "dictionary_paths": [
+    "dictionary.txt",
+    "dictionary.local.jsonl"
+  ],
+  "dictionary_max_initial_prompt_terms": 120
+}

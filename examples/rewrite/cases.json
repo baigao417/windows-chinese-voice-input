@@ -1,0 +1,9 @@
+[
+  {
+    "id": "demo",
+    "mode": "long",
+    "required_keywords": ["示例项目", "界面"],
+    "required_terms": ["示例设备"],
+    "forbidden_patterns": ["嗯嗯"]
+  }
+]

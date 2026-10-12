@@ -1,0 +1,3 @@
+# Fictional demo vocabulary, not imported from a personal dictionary.
+示例项目
+示例设备
